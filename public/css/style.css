@@ -18,7 +18,7 @@
 #botonRegistarme{
   display: block;
   background-color:#fbd43b;
-  
+
 }
 
 .amarillo-botones{
@@ -31,4 +31,18 @@
 
 .indicator-item:active{
   background-color: red !important;
+}
+
+#validarContenedor{
+  margin-top: 15vh;
+}
+
+.terminos-text{
+  color:#00c3a3;
+}
+.div-espacio{
+  margin-bottom: 50px;;
+}
+.btn-amarillo{
+  background-color:#fbd43b;
 }
