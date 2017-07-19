@@ -1,8 +1,34 @@
-.carrusel{
-  height: 100vh !important;
+#carruselContenedor{
+  height: 80vh;
+  padding-top: 8vh;
+}
+
+#carrusel{
+  height: 70vh !important;
 }
 
 .img-carrusel{
-  height: 50%;
-  width: auto;
+  height: auto !important;
+  width: 50%!important;
+}
+.gris-letra-soft{
+  color:#8f8f8f;
+}
+
+#botonRegistarme{
+  display: block;
+  background-color:#fbd43b;
+  
+}
+
+.amarillo-botones{
+  color:#fbd43b;
+}
+.indicator-item{
+  background-color: #b0bec5 !important;
+
+}
+
+.indicator-item:active{
+  background-color: red !important;
 }
