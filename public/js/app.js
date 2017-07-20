@@ -2,20 +2,44 @@ var $telefono = $("#telefono");
 var $botonContinuar = $("#botonContinuar");
 var $telUsuario;
 var $check = $('#filled-in-box');
+var $codigoRespuesta;
 
 $botonContinuar.click(function(){
   verificarCheck();
 });
+function obtenerCodigo(respuesta){
+  //alert('estoy solicitando codigo');
+  $.post('http://localhost:3000/api/resendCode', {
+      phone: '$telUsuario',
+    })
+    .then(function(response){
+      alert('Su código es: ' + response.data);
+      var $codigoRespuesta= response.data;
+      //$(location).attr('href','http://capitan-dev.laboratoria.la');
+      console.log("el código dado es: " + $codigoRespuesta);
+    })
+}
 
+
+function enviarData(){
+  //alert("enviando data");
+  $.post('http://localhost:3000/api/registerNumber', {
+  		phone: '$telUsuario',
+  		terms: 'true'
+  	}) .then(obtenerCodigo())
+}
+
+
+
+//verifica que se acepten terminos y condi
 function verificarCheck(){
   if($('#filled-in-box').is(':checked')) {
-    $.get("http://localhost:3000/index.html");
-       }else{
+    enviarData();
+           }else{
          alert("acepte los terminos y condiciones");
        }
 }
 //Habilita el boton continuary verifica que el telefono sea de 10digitos
-
 $("#telefono").change(function(event){
   event.preventDefault();
   var $telefonoValor=$telefono.val();
