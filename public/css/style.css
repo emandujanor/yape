@@ -4,7 +4,7 @@
 }
 
 #carrusel{
-  height: 70vh !important;
+  height: 50vh !important;
 }
 
 .img-carrusel{
@@ -25,6 +25,7 @@
   color:#fbd43b;
 }
 .indicator-item{
+  margin-top: 50px;
   background-color: #b0bec5 !important;
 
 }

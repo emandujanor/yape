@@ -17,8 +17,8 @@ const format = morganjson({
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
-
 app.use(morgan(format));
+
 
 
 app.get('/', function(req,res){
