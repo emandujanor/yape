@@ -47,3 +47,47 @@
 .btn-amarillo{
   background-color:#fbd43b;
 }
+#img-candado{
+  max-width:20px;
+  height: auto;
+  margin-left:-190px;
+}
+#img-reloj{
+  max-width:20px;
+  height: auto;
+}
+.label-codigo{
+  margin-left: 190px;
+  text-align: center;
+}
+.reintentartxt{
+  font-size: .99em;
+  color:#8f8f8f;
+  text-align: center;
+}
+.img-label{
+  max-width:20px;
+  height: auto;
+  margin-right: 50px;
+}
+
+.fdo-amarillo{
+  background-color: #fbd43b;
+  height: 100vh;
+
+}
+
+.img-bienvenido{
+  width: 60%;
+  height: auto;
+  vertical-align: middle;
+  margin:25vh auto auto auto;
+}
+.text-bienvenido{
+  font-size: 1.8em;
+  font-weight: bold;
+  color:black;
+}
+.espacio-Top{
+  margin-top: 8vh;
+}

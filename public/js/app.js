@@ -3,20 +3,40 @@ var $botonContinuar = $("#botonContinuar");
 var $telUsuario;
 var $check = $('#filled-in-box');
 var $codigoRespuesta;
+var $arregloRespuesta;
+var $telSms =$("#telSms");
+var $codigo=$("#codigo");
+var $codigoIngresado=$codigo.val();
+
+
+
+
+
 
 $botonContinuar.click(function(){
   verificarCheck();
 });
+
+function verificaCodigo($codigoRespuesta){
+  if($codigoRespuesta==$codigoIngresado){
+    alert("es igual");
+  }if($codigoRespuesta!=$codigoIngresado){
+    alert("NO es igual");
+  }
+
+}
+
+//solicita a la API el código y se muestra en una alerta
 function obtenerCodigo(respuesta){
   //alert('estoy solicitando codigo');
   $.post('http://localhost:3000/api/resendCode', {
       phone: '$telUsuario',
     })
     .then(function(response){
+      $arregloRespuesta = response;
+      var $codigoRespuesta = response.data;
       alert('Su código es: ' + response.data);
-      var $codigoRespuesta= response.data;
-      //$(location).attr('href','http://capitan-dev.laboratoria.la');
-      console.log("el código dado es: " + $codigoRespuesta);
+      
     })
 }
 
@@ -46,6 +66,7 @@ $("#telefono").change(function(event){
   if ($telefonoValor.length ==10){
       $botonContinuar.removeClass('disabled');
       $telUsuario = $telefonoValor;
+      $telSms.text("Estamos enviando un SMS con el código de validación al número" + $telUsuario );
 
   }else{
       alert('Introduce los 10 digitos de tu teléfono ');
@@ -68,6 +89,5 @@ $("#telefono").change(function(event){
  $(document).ready(function(){
    $('.carousel').carousel();
    setInterval(moverCarrusel, 5000); //
-
 
  });
